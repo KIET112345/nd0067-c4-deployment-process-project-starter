@@ -46,7 +46,8 @@ jobs:
             npm run api:build
       - run:
           name: Generate deployment package
-          run: zip -r deploy.zip * -x ./node_modules
+          command: |
+            zip -r deploy.zip * -x ./node_modules
   # deploy step will run only after manual approval
   deploy:
     docker:
